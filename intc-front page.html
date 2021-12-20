@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>intc</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+
+/* header */
+.mynavbar{
+    background-color: transparent !important;
+    transition:0.80s ease;
+}
+.mynavbar.scrolled{
+  background-image: linear-gradient(120deg, #d1faff 0%, #c2e9fb 100%)!important;
+}
+.navbar-brand{
+    width: 80px;
+    height: 75px;
+}
+.navbar-brand img{
+    width: 100%;
+    height: auto;
+}
+.nav-item{
+    display: flex;
+}
+.nav-item img{
+    width: 50px;
+    height: 50px;
+}
+.mycollapse{
+  display: flex;
+  justify-content: flex-end;
+}
+.mycollapse a{
+  line-height: 2;
+}
+.mycollapse2{
+  justify-content: flex-end;
+}
+ a{
+  color: black;
+  line-height: 2;
+}
+
+/* mainpage */
+.mainbg{
+  width: 100%;
+  background: url("./image/mainpage/mainpg-bg.jpg")center no-repeat;
+  background-size: cover;
+  height: 900px;
+  position: relative;
+  z-index: 5;
+}
+.mainword{
+  font-size: 3rem;
+  position: absolute;
+  top: 31%;
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgb(255, 255, 255);
+}
+.blue-bg{
+  width: 100%;
+  height: 15%;
+  position: absolute;
+  top: 90%;
+  z-index: 4;
+}
+.blue-bg img{
+  width: 100%;
+  height: 100%;
+}
+.downicon{
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5;
+}
+.downicon img{
+  width: 100%;
+  height: auto;
+}
+
+/* no1 */
+.no1 img{
+  width: 100%;
+  height: 15rem;
+  object-fit:cover;
+}
+[data-aos^=zoom][data-aos^=zoom].aos-animate{
+  display: flex;
+  justify-content: center;
+}
+.cir{ 
+  width: 15%;
+}
+.picture{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin-bottom: 50px;
+  justify-content: center
+}
+.no1jpg{
+  display:inline-block;
+  position:relative;
+  width:400px;
+  height:400px;
+  overflow:hidden;
+  border-radius:50%;
+  box-shadow:2px 2px 8px #333333;
+  
+}
+.no1jpg img{
+  width:auto;
+  height:100%;
+  margin-left:-50%;
+}
+.word{
+  margin: 50px;
+  text-align: center;
+}
+.word p{
+  font-size: 1.5rem;
+}
+
+/* could bg */
+.could img{
+  width: 100%;
+  height: auto;
+  position: absolute;
+  margin-top: -20rem;
+  z-index: -1;
+}
+
+.mimi{
+  border-radius: 50%;
+}
+[data-aos][data-aos][data-aos-duration="400"], body[data-aos-duration="400"] [data-aos]{
+  transition-duration:1.5s
+}
+
+/* good */
+.g-wraper{
+  text-align: center;
+  color: #fff;
+}
+.g-wraper h2{
+  line-height: 3;
+}
+.cov-card{
+  margin: 0 10px;
+  text-align: center;
+}
+.cov-card img{
+  width: 50%;
+}
+.cov-title{
+  color:#fff;
+  text-align: center;
+}
+.card-body{
+  padding: 1rem;
+}
+.sharecard {
+  overflow: hidden;
+  background-size:cover;
+  border-radius: 5px;
+  
+}
+.sharerow{
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.share{
+  margin: 5px;
+}
+
+.share img{
+  max-width: 200px;
+  max-height: 250px;
+  border-radius: 10px;
+  object-fit:cover;
+  position: relative;
+  height: 250px;
+}
+.cardword{
+  position: absolute;
+  left: 50%;
+  top:65%;
+}
+.bgg{
+  background: url("./image/mainpage/foot-bg.jpg")center center no-repeat;
+  background-size: cover;
+}
+
+/* footer */
+.foot{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background:url("./image/could-bg.png")center center no-repeat;
+  margin-top: 10px;
+}
+.out{
+  display: flex;
+  margin: 10px;
+}
+.footimg{
+  width: 5rem;
+}
+.footimg img{
+  width: 100%;
+}
+.footerp{
+  font-size: 12px;
+}
+
+/* upup */
+.back-to-top {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  border-radius: 50%;
+  border: 5px solid #d6fcff;
+  width: 60px;
+  height: 60px;
+  background-color: white;
+}
+.back-to-top:hover {
+  background-color: #d6fcff;
+  color: #fff;
+  border: 5px solid #00e1f1;
+}
+.back-to-top img {
+  width: 100%;
+}
+</style>
+</head>
+
+
+<body>
+
+<!-- header -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top mynavbar ">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="./intc-front page.html">
+            <img src="./image/logo.png" alt="" width="30" height="24">
+          </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse mycollapse" id="navbarScroll">
+        <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+          <li class="nav-item">
+            <img src="./icon/quality.png" alt="">
+            <a class="nav-link active mynavlink" aria-current="page" href="./intc-no1page.html">推薦行程</a>
+          </li>
+          <li class="nav-item">
+            <img src="./icon/talk.png" alt="">
+            <a class="nav-link active mynavlink" aria-current="page" href="./infc-cp.html">情侶專屬</a>
+          </li>
+          <li class="nav-item">
+            <img src="./icon/magi.png" alt="">
+            <a class="nav-link active mynavlink" aria-current="page" href="./intc-restaurant.html">北岸咖啡廳</a>
+          </li>
+          <li class="nav-item">
+            <img src="./icon/play.png" id="icon">
+          </li>
+        </ul>
+        <audio id="mysong">
+          <source src="./Syn Cole - Time [NCS Release].mp3" type="audio/mp3">
+        </audio>
+        
+      </div>
+      <div class="collapse navbar-collapse mycollapse2" id="navbarScroll">
+        <li class="nav-item mynav">
+            <img src="./icon/favourite.png" alt="">
+            <a class="nav-link active mynavlink" aria-current="page" href="#">收藏
+            </a>
+          </li>
+      </div>
+    </div>
+</nav>
+
+<!-- mainpage -->
+<div class="mainbg">
+  <p class="mainword">和我一起，體驗北岸的美好 !</p>
+  <div class="blue-bg">
+    <img src="./image/blue-bg.png" alt="">
+    <div class="downicon">
+      <a href=""><img src="./icon/down.png" alt=""></a>
+     
+    </div>
+  </div>
+</div>
+
+<!-- no1 -->
+<section>
+  <div class="no1">
+    <div data-aos="fade-down"
+    data-aos-easing="linear"
+    data-aos-duration="1500">
+      <img src="./image/mainpage/no1-bg.jpg" alt="">
+    </div>
+  </div>
+  <div data-aos="zoom-in">
+    <img class="cir"src="./icon/cir-quality.svg" alt="">
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="picture">
+          <div data-aos="fade-right">
+            <div class="no1jpg">
+            <img src="./image/mainpage/no1.jpg" alt="">
+            </div>
+          </div>
+          <div data-aos="zoom-out">
+            <div class="word">
+              <p> 艷陽高照，海風徐徐，</br>最適合來一場夏日旅遊。</br>跟著 i 北岸 的腳步，開啟樂活的一天 !</p>
+              <a href="./intc-no1page.html">view more +</a>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+<div class="could">
+  <img src="./image/could-bg.png" alt="">
+</div>
+</section>
+
+<!-- cp -->
+<section>
+  <div class="no1">
+    <div data-aos="fade-down"
+    data-aos-easing="linear"
+    data-aos-duration="1500">
+    <img src="./image/mainpage/cp-bg.jpg" alt="">
+    </div>
+  </div>
+<div data-aos="zoom-in">
+  <img class="cir"src="./icon/cir-talk.svg" alt="">
+</div>
+<div class="container">
+  <div class="row">
+    <div class="picture">
+      <div data-aos="fade-right">
+        <div class="no1jpg">
+        <img src="./image/mainpage/cp.jpg" alt="">
+        </div>
+      </div>
+      <div data-aos="zoom-out">
+        <div class="word">
+          <p>專屬情侶的浪漫之旅，</br>創造兩人回憶的最佳首選!</p>
+          <a href="./infc-cp.html">view more +</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="could">
+<img src="./image/could-bg.png" alt="">
+</div>
+</section>
+
+<!--magi-->
+<section>
+  <div class="no1">
+    <div data-aos="fade-down"
+    data-aos-easing="linear"
+    data-aos-duration="1500">
+    <img src="./image/mainpage/eat-bg.jpg" alt="">
+    </div>
+  </div>
+<div data-aos="zoom-in">
+  <img class="cir"src="./icon/cir-magi.svg" alt="">
+</div>
+<div class="container">
+  <div class="row">
+    <div class="picture">
+      <div data-aos="fade-right">
+        <div class="no1jpg">
+        <img src="./image/mainpage/eat.jpg" alt="">
+        </div>
+      </div>
+      <div data-aos="zoom-out">
+        <div class="word">
+          <p> 伴著海浪漫步，是不是險些曬昏頭?</br>趕緊停下腳步，來咖啡廳坐坐吧 !</p>
+          <a href="./intc-restaurant.html">view more +</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="could">
+<img src="./image/could-bg.png" alt="">
+</div>
+</section>
+
+<!--good-->
+<section>
+    <div class="bgg">
+    <div class="container">
+    <div class="rpw">
+      <div class="g-wraper">
+        <h2>北岸的美好，來過就知道!</h2>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-3">
+        <div class="cov-card">
+          <img src="./icon/camera.png" alt="">
+          <div class="card-body">
+            <p class="cov-title">美好回憶</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="cov-card">
+          <img src="./icon/restaurant.png" alt="">
+          <div class="card-body">
+            <p class="cov-title">北岸美食</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="cov-card">
+          <img src="./icon/mountain.png" alt="">
+          <div class="card-body">
+            <p class="cov-title">北岸美景</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="cov-card">
+          <img src="./icon/group.png" alt="">
+          <div class="card-body">
+            <p class="cov-title">感情增溫</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</section>
+
+<!-- footer -->
+<footer>
+<div class="foot">
+  <div class="footimg">
+    <img src="./image/logo.png" alt="">
+  </div>
+<p>聯絡電話 : 0903570417</p>
+<div class="out">
+  <a href=""><img src="./icon/fb.png" alt=""></a>
+  <a href=""><img src="./icon/ig.png" alt=""></a>
+  <a href=""><img src="./icon/line.png" alt=""></a>
+</div>
+  <p class="footerp">Copyright © 2021 i 北岸  All rights reserved.</p>
+</div>
+<!-- upup -->
+<button class="js-back-to-top back-to-top" title="totop"><img src="./icon/arrow-down.png" alt=""></button>
+</footer>
+
+
+
+
+
+<!-- bs js -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.1/dist/umd/popper.min.js" integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
+
+
+<!-- animation -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+
+<!-- jq -->
+<script src="https://code.jquery.com/jquery-3.6.0.js"
+    integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+
+<!--my jq -->
+    <script>
+    // header
+    $(window).scroll(function(){
+    $('nav').toggleClass('scrolled', $(this).scrollTop() > 80);
+    });
+
+    $(document).ready(function(){       
+        var scroll_pos = 0;
+        $(document).scroll(function() { 
+            scroll_pos = $(this).scrollTop();
+            if(scroll_pos > 80) {
+                $('.mynavlink').css('color', '#000');
+            } else {
+                $('.mynavlink').css('color', '#fff');
+            }
+        });
+    });
+    
+    var mysong = document.getElementById("mysong");
+    var icon = document.getElementById("icon");
+
+    icon.onclick = function(){
+      if(mysong.paused){
+        mysong.play();
+        icon.src = "./icon/pause-button.png";
+      }
+      else{
+        mysong.pause();
+        icon.src = "./icon/play.png";
+      }
+    }
+</script> 
+
+<script>
+   $(function() {
+  var $win = $(window);
+  var $backToTop = $('.js-back-to-top');
+  $win.scroll(function() {
+    if ($win.scrollTop() > 100) {
+      $backToTop.show();
+    } else {
+      $backToTop.hide();
+    }
+  });
+  $backToTop.click(function() {
+    $('html, body').animate({
+      scrollTop: 0
+    }, 100);
+  });
+});
+</script>
+
+<script>
+  AOS.init();
+</script>
+
+
+</body>
+</html>
